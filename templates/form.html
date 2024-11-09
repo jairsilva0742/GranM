@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Ecuación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            max-width: 500px;
+            background-color: #f9f9f9;
+        }
+        .input-container {
+            display: flex;
+            row-gap: 10px;
+            margin-bottom: 15px;
+        }
+        input[type="text"] {
+            flex:content;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .radio-container {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        label {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ingreso de Ecuaciones</h2>
+    <form action="/procesar_ecuacion" method="POST">
+        <div class="input-container">
+            <label>
+                <input type="radio" name="maxi" value="minimizar" required>
+                minimizar
+            </label>
+            <label>
+                <input type="radio" name="maxi" value="maximizar">
+                maximizar
+            </label>
+        </div>
+        <div class="input-container">
+            <label for="entrada1">Ecuación:</label>
+            <input type="text" id="entrada1_1" name="entrada1_1" required>
+            +
+            <input type="text" id="entrada1_2" name="entrada1_2" required>
+            
+            
+        </div>
+        <h2>Restricciones</h2>
+        <div class="input-container">
+            <label for="entrada2">Restricción 1:</label>
+            <input type="text" id="entrada2_1" name="entrada2_1" required>
+            +
+            <input type="text" id="entrada2_2" name="entrada2_2" required>
+            <div class="radio-container">
+                <label>
+                    <input type="radio" name="opcion2" value="opcion2_1" required>
+                    =
+                </label>
+                <label>
+                    <input type="radio" name="opcion2" value="opcion2_2">
+                    <=
+                </label>
+                <label>
+                    <input type="radio" name="opcion2" value="opcion2_3">
+                    >=
+                </label>
+            </div>
+            <input type="text" id="resultado2" name="resultado2" required>
+        </div>
+
+        <div class="input-container">
+            <label for="entrada3">Restricción 2:</label>
+            <input type="text" id="entrada3_1" name="entrada3_1" required>
+            +
+            <input type="text" id="entrada3_2" name="entrada3_2" required>
+            <div class="radio-container">
+                <label>
+                    <input type="radio" name="opcion3" value="opcion3_1" required>
+                    =
+                </label>
+                <label>
+                    <input type="radio" name="opcion3" value="opcion3_2">
+                    <=
+                </label>
+                <label>
+                    <input type="radio" name="opcion3" value="opcion3_3">
+                    >=
+                </label>
+            </div>
+            <input type="text" id="resultado3" name="resultado3" required>
+        </div>
+
+        <div class="input-container">
+            <label for="entrada4">Restricción 3:</label>
+            <input type="text" id="entrada4_1" name="entrada4_1" required>
+            +
+            <input type="text" id="entrada4_2" name="entrada4_2" required>
+            <div class="radio-container">
+                <label>
+                    <input type="radio" name="opcion4" value="opcion4_1" required>
+                    =
+                </label>
+                <label>
+                    <input type="radio" name="opcion4" value="opcion4_2">
+                    <=
+                </label>
+                <label>
+                    <input type="radio" name="opcion4" value="opcion4_3">
+                    >=
+                </label>
+            </div>
+            <input type="text" id="resultado4" name="resultado4" required>
+        </div>
+
+        <input type="submit" value="Calcular">
+    </form>
+</body>
+</html>

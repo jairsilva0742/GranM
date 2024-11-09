@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<style>
+    .inputU {
+        width: 7%;  /* 50% del ancho del contenedor padre */
+    }
+    .boton {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+    }
+    .boton:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Matriz</title>
+</head>
+
+<body>
+    <h1>Tabla Simplex Método Gran M</h1>
+    <form action="/submit" method="POST">
+    <h2>Tabla Simplex inicial Aumentada</h2>
+        {% for fila in matriz %}
+            {% for elemento in fila%}
+                
+                <input type="text" class="inputU" name="{{ elemento }}" value="{{ elemento }}" readonly>
+            {% endfor %}
+            <br>
+        {% endfor %}
+        <h2>Tabla Simplex con eliminación de M</h2>
+        {% for fila in matriz2 %}
+            {% for elemento in fila%}
+                
+                <input type="text" class="inputU" name="{{ elemento }}" value="{{ elemento }}" readonly>
+            {% endfor %}
+            <br>
+        {% endfor %}
+
+    <h2>Tabla Simplex con primera eliminación</h2>
+        {% for fila in matriz4 %}
+            {% for elemento in fila%}
+                
+                <input type="text" class="inputU" name="{{ elemento }}" value="{{ elemento }}" readonly>
+            {% endfor %}
+            <br>
+        {% endfor %}
+    <h2>Tabla Simplex con segunda eliminación</h2>
+        {% for fila in matriz3 %}
+            {% for elemento in fila%}
+                
+                <input type="text" class="inputU" name="{{ elemento }}" value="{{ elemento }}" readonly>
+            {% endfor %}
+            <br>
+        {% endfor %}
+    <h2>Tabla Simplex con Tercera eliminación</h2>
+        {% for fila in matriz5 %}
+            {% for elemento in fila%}
+                
+                <input type="text" class="inputU" name="{{ elemento }}" value="{{ elemento }}" readonly>
+            {% endfor %}
+            <br>
+        {% endfor %}
+        <br>
+        <br>
+    <h2>Resultados</h2>
+    <label>{{a}} = {{b}}</label>
+    {% for fila in soluciones%}
+    <br>
+        {% for elemento in fila%}
+            <label>{{elemento}}</label>
+        {% endfor %}
+        
+    {% endfor %}
+    <br>
+    <br>
+    <h2>Analisis de Sensibilidad</h2>
+    <h3>Considerando la solucion final</h3>
+    <p>Se ordenan de acuerdo al orden de las restricciones dadas inicialmente</p>
+    <ol>
+    {% for elemento in solutions%}
+        <li>Restricción: {{ elemento }}</li>
+        <br>
+    {% endfor %}
+    </ol>
+    <br>
+    <h3>Considerando el precio sombra</h3>
+    <p>Se ordenan de acuerdo al orden de las restricciones dadas inicialmente</p>
+    <ol>
+    {% for elemento in sombra%}
+        <li>Restriccion: se obtiene un precio sombra de {{ elemento }}</li>
+        <br>
+    {% endfor %}
+    </ol>
+    <br>
+    <h3>Considerando las variables de decisión</h3>
+    <p>Se ordenan de acuerdo al orden de las restricciones dadas inicialmente</p>
+    <ol>
+    {% for elemento in solutions2%}
+        <li>Restricción: {{ elemento }}</li>
+        <br>
+    {% endfor %}
+    </ol>
+    <br>
+    <a href="/" class="boton">Ir al Inicio</a>
+    </form>
+</body>
+</html>
