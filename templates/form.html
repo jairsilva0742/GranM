@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+        
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Ecuación</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Parkinsans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
             margin: 20px;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 10px;
-            max-width: 500px;
+            max-width: 720px;
             background-color: #f9f9f9;
+            justify-content: center; /* Centrado horizontal */
         }
         .input-container {
             display: flex;
-            row-gap: 10px;
+            row-gap: 20px;
+            column-gap: 10px;
             margin-bottom: 15px;
         }
         input[type="text"] {
+            display: flex;
             flex:content;
+            min-width: 100px;
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
         .radio-container {
+            display:flex;
             margin-top: 15px;
             margin-bottom: 15px;
         }
@@ -33,6 +45,10 @@
             margin-right: 10px;
         }
         input[type="submit"] {
+            font-family: "Parkinsans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
             background-color: #4CAF50;
             color: white;
             padding: 10px 15px;

@@ -241,12 +241,13 @@ def granM(c,d,e,m,entrada1_1,entrada1_2,entrada2_1,entrada2_2,resultado2,entrada
         print("recursos ",recursos)
         sombra=precioSombra.get(Be_inv,recursos,Ce)
         solutions2=variablesDecision.get(newMatriz2,tablaInicial,Ce,indicesColFinal)
-        pendiente1=-(entrada2_1/entrada2_2)
+        """pendiente1=-(entrada2_1/entrada2_2)
         pendiente2=-(entrada3_1/entrada3_2)
         pendiente3=-(entrada4_1/entrada4_2)
         Ecuacion1=pendiente1*x+(resultado2/entrada2_2)
         Ecuacion2=pendiente2*x+(resultado3/entrada3_2)
-        Ecuacion3=pendiente3*x+(resultado4/entrada4_2)
+        Ecuacion3=pendiente3*x+(resultado4/entrada4_2)"""
+        
         return a,b,tablaInicial,soluciones,tabla2,tabla3,tabla4,tabla5,solutions,sombra,solutions2
     
     indexMax=Columnapivote.find(newMatriz2,minimizar)
