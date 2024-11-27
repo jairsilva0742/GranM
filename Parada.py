@@ -6,11 +6,9 @@ def comprobar(Matrix,minimizar):
     if minimizar:
         print("minimizar")
         for i in range(Matrix.shape[1]-3):
-            a=parse_expr(Matrix[1,i+2]).subs(M,5000)
-            
+            a=parse_expr(Matrix[1,i+2]).subs(M,5000)            
             if a<0:
-                stop=True
-                
+                stop=True               
             elif a==0:
                 stop=True
             else:
@@ -19,16 +17,12 @@ def comprobar(Matrix,minimizar):
     else:
         print("maximizar")
         for i in range(Matrix.shape[1]-3):
-            a=parse_expr(Matrix[1,i+2]).subs(M,5000)
-            
+            a=parse_expr(Matrix[1,i+2]).subs(M,5000)           
             if a>0:
-                stop=True
-                
+                stop=True               
             elif a==0:
-                stop=True
-                
+                stop=True                
             else:
-                stop=False
-                
+                stop=False               
                 break
     return stop
